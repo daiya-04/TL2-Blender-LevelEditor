@@ -113,6 +113,9 @@ class MYADDOM_OT_export_scene(bpy.types.Operator, bpy_extras.io_utils.ExportHelp
         if "object_name" in object:
             self.write_and_print(file, indent + "K %s" % object["object_name"])
         
+        if "disabled" in object:
+            self.write_and_print(file, indent + "D %s" % object["disabled"])
+        
         #カスタムプロパティ'collision'
         if "collider" in object:
             self.write_and_print(file, indent + "C %s" % object["collider"])
@@ -162,6 +165,9 @@ class MYADDOM_OT_export_scene(bpy.types.Operator, bpy_extras.io_utils.ExportHelp
 
         if "object_name" in object:
             json_object["object_name"] = object["object_name"]
+
+        if "disabled" in object:
+            json_object["disabled"] = object["disabled"]
 
         #
         if "collider" in object:

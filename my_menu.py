@@ -4,6 +4,7 @@ from .create_uv_sphere import MYADDON_OT_create_uv_sphere
 from .create_cube import MYADDON_OT_create_cube
 from .export_scene import MYADDOM_OT_export_scene
 
+
 #トップバーの拡張メニュー
 class TOPBAR_MT_my_menu(bpy.types.Menu):
     #Blenderがクラスを識別する為の固有の文字列
@@ -11,7 +12,7 @@ class TOPBAR_MT_my_menu(bpy.types.Menu):
     #メニューのラベルとしても表示される文字列
     bl_label = "MyMenu"
     #著者表示用の文字列
-    bl_description = "拡張メニュー by " + bl_info["author"]
+    bl_description = "拡張メニュー by " + "Dai"
 
     #サブメニューの描画
     def draw(self,context):
