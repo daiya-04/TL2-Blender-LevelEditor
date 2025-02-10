@@ -3,7 +3,6 @@ import bpy_extras
 import math
 import json
 
-
 #オペレータ シーン出力
 class MYADDOM_OT_export_scene(bpy.types.Operator, bpy_extras.io_utils.ExportHelper):
     bl_idname = "myaddon.myaddon_ot_export"
@@ -137,7 +136,10 @@ class MYADDOM_OT_export_scene(bpy.types.Operator, bpy_extras.io_utils.ExportHelp
         #シーンのオブジェクト1個分のjsonオブジェクト生成
         json_object = dict()
         #オブジェクト種類
-        json_object["type"] = object.type
+        if "type" in object:
+            json_object["type"] = object["type"]
+        else:
+            json_object["type"] = object.type
         #オブジェクト名
         json_object["name"] = object.name
 

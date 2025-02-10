@@ -3,6 +3,7 @@ import bpy
 from .create_uv_sphere import MYADDON_OT_create_uv_sphere
 from .create_cube import MYADDON_OT_create_cube
 from .export_scene import MYADDOM_OT_export_scene
+from .spawn import MYADDON_OT_spawn_create_player_symbol, MYADDON_OT_spawn_create_enemy_symbol
 
 
 #トップバーの拡張メニュー
@@ -20,6 +21,8 @@ class TOPBAR_MT_my_menu(bpy.types.Menu):
         #トップバーの「エディターメニュー」に項目（オペレータ）を追加
         self.layout.operator(MYADDON_OT_create_uv_sphere.bl_idname, text = MYADDON_OT_create_uv_sphere.bl_label)
         self.layout.operator(MYADDON_OT_create_cube.bl_idname, text = MYADDON_OT_create_cube.bl_label)
+        self.layout.operator(MYADDON_OT_spawn_create_player_symbol.bl_idname, text = MYADDON_OT_spawn_create_player_symbol.bl_label)
+        self.layout.operator(MYADDON_OT_spawn_create_enemy_symbol.bl_idname, text = MYADDON_OT_spawn_create_enemy_symbol.bl_label)
         self.layout.separator()
         self.layout.operator(MYADDOM_OT_export_scene.bl_idname, text = MYADDOM_OT_export_scene.bl_label)
 
